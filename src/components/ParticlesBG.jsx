@@ -31,32 +31,14 @@ const ParticlesBG = () => {
                 mode: "push"
               },
               onHover: { 
-                enable: true, 
-                mode: "grab",
-                parallax: {
-                  enable: true,
-                  force: 60,
-                  smooth: 10
-                }
+                enable: false
               }, 
               resize: true 
             },
             modes: { 
-              grab: {
-                distance: 200,
-                links: {
-                  opacity: 0.5,
-                  blink: true
-                }
-              },
               push: {
                 quantity: 4
-              },
-              repulse: { 
-                distance: 100, 
-                duration: 0.4,
-                speed: 1
-              } 
+              }
             }
           },
           particles: {
