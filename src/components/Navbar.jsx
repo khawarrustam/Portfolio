@@ -200,6 +200,13 @@ const Navbar = () => {
                 </div>
                 <div className={styles.profileName}>Rana Khawar Ali</div>
                 <div className={styles.profileTitle}>Software Developer</div>
+                <div className={styles.profileSubtitles}>
+                  <span>Student</span>
+                  <span>•</span>
+                  <span>MERN Stack Developer</span>
+                  <span>•</span>
+                  <span>AI Engineer</span>
+                </div>
               </div>
 
               <nav className={styles.sidebarNav}>

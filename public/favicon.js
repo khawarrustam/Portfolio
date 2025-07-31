@@ -71,8 +71,9 @@ function createWebManifest() {
   const link = document.createElement('link');
   link.rel = "manifest";
   link.href = "data:application/json;charset=utf-8," + encodeURIComponent(JSON.stringify({
-    name: "Rana Khawar Ali Portfolio",
+    name: "Rana Khawar Ali - MERN Stack & AI Engineer",
     short_name: "RKA Portfolio",
+    description: "MERN Stack Developer, AI Engineer, UI Designer & Web Developer",
     icons: [{
       src: document.querySelector('link[sizes="192x192"]')?.href || "",
       sizes: "192x192",
