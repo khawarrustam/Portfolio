@@ -175,6 +175,9 @@
   
   .copyright {
     font-size: 0.9rem;
+    padding: 0 1rem;
+    text-align: center;
+    width: 100%;
   }
   
   .copyright::before, .copyright::after {
@@ -186,6 +189,10 @@
     right: 1.5rem;
     width: 3rem;
     height: 3rem;
+  }
+  
+  .footerContent {
+    padding: 0 1rem;
   }
 }
 
@@ -213,5 +220,11 @@
     right: 1rem;
     width: 2.7rem;
     height: 2.7rem;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+    line-height: 1.4;
   }
 }

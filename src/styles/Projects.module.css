@@ -312,13 +312,23 @@
   }
   
   .filters {
-    gap: 0.8rem;
+    gap: 0.5rem;
     margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+    justify-content: flex-start;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .filters::-webkit-scrollbar {
+    display: none;
   }
   
   .filterBtn, .activeFilter {
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
+    white-space: nowrap;
   }
   
   .projectsGrid {
@@ -328,10 +338,16 @@
   .projectCard {
     min-width: 240px;
     padding: 1.5rem;
+    max-width: 100%;
   }
   
   .projectTitle {
     font-size: 1.2rem;
+  }
+  
+  .techTags {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -351,6 +367,20 @@
   
   .projectCard {
     min-width: 100%;
+    margin: 0 0.5rem;
+  }
+  
+  .projectImg {
+    height: 160px;
+  }
+  
+  .projectDescription {
+    font-size: 0.95rem;
+  }
+  
+  .techTag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
   }
 }
 
