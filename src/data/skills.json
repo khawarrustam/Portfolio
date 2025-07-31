@@ -1,0 +1,7 @@
+[
+  {"category": "Frontend", "skills": ["React", "HTML5", "CSS3", "JavaScript", "Redux"]},
+  {"category": "Backend", "skills": ["Node.js", "Express"]},
+  {"category": "Databases", "skills": ["MongoDB", "Firebase"]},
+  {"category": "Tools", "skills": ["GitHub", "Netlify", "Vercel", "Postman"]},
+  {"category": "Languages", "skills": ["C++", "Python", "Jupyter"]}
+]

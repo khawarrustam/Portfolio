@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Portfolio Website",
+    "description": "A visually stunning, animated developer portfolio built with React, Framer Motion, and neon effects.",
+    "image": "/assets/portfolio-thumb.png",
+    "technologies": ["React", "Framer Motion", "SCSS"],
+    "github": "https://github.com/khawarrustam/portfolio",
+    "live": "https://your-portfolio.vercel.app/"
+  },
+  {
+    "title": "Task Manager App",
+    "description": "A productivity app with real-time sync using Firebase, React, and Material UI.",
+    "image": "/assets/taskmanager-thumb.png",
+    "technologies": ["React", "Firebase", "Material UI"],
+    "github": "https://github.com/khawarrustam/task-manager",
+    "live": "https://taskmanager.vercel.app/"
+  }
+]

@@ -1,0 +1,252 @@
+.contactSection {
+  min-height: 60vh;
+  background: transparent;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Create a circuit board background pattern */
+.contactSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(90deg, transparent 49%, rgba(0, 255, 255, 0.05) 50%, transparent 51%),
+    linear-gradient(0deg, transparent 49%, rgba(0, 255, 255, 0.05) 50%, transparent 51%);
+  background-size: 40px 40px;
+  z-index: -1;
+}
+
+/* Add data stream effect */
+.contactSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+    transparent, 
+    rgba(0, 255, 255, 0.7), 
+    rgba(255, 0, 247, 0.7), 
+    rgba(57, 255, 20, 0.7), 
+    transparent);
+  animation: dataStream 8s linear infinite;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+  z-index: 0;
+}
+
+@keyframes dataStream {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.glowTitle {
+  font-size: 2.5rem;
+  font-family: 'Orbitron', system-ui, sans-serif;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(57, 255, 20, 0.5);
+  font-weight: bold;
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.glowTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00ffff, rgba(255, 0, 247, 0.7));
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  animation: pulseWidth 4s ease-in-out infinite;
+}
+
+@keyframes pulseWidth {
+  0%, 100% { width: 80px; }
+  50% { width: 120px; }
+}
+
+.contactForm {
+  background: rgba(10, 10, 35, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 0 60px rgba(57, 255, 20, 0.1);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  transform-style: preserve-3d;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  z-index: 1;
+}
+
+/* Add pulsing border effect */
+.contactForm::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, 
+    #00ffff, #ff00f7, #39ff14, #00ffff, 
+    #ff00f7, #39ff14, #00ffff);
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(10px);
+  opacity: 0.5;
+  border-radius: 20px;
+  animation: glowingBorder 20s linear infinite;
+}
+
+@keyframes glowingBorder {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+
+.formRow {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.inputField {
+  background: rgba(10, 10, 35, 0.5);
+  border: 2px solid #00ffff;
+  border-radius: 12px;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem 1.2rem;
+  width: 100%;
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s;
+  backdrop-filter: blur(5px);
+}
+
+.inputField:focus {
+  border-color: #39ff14;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  transform: translateY(-3px);
+}
+
+.inputField::placeholder {
+  color: rgba(0, 255, 255, 0.6);
+}
+
+.textArea {
+  min-height: 150px;
+  resize: none;
+}
+
+.submitBtn {
+  background: rgba(0, 255, 255, 0.8);
+  color: #0a0a23;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  margin-top: 1rem;
+  align-self: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  z-index: 1;
+}
+
+.submitBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 247, 0.5);
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.submitBtn:hover::before {
+  left: 0;
+}
+
+.submitBtn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 50px rgba(255, 0, 247, 0.4);
+  color: #fff;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.successMsg {
+  color: #39ff14;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.7);
+  animation: successPulse 2s infinite alternate;
+}
+
+@keyframes successPulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 5rem 1.5rem;
+  }
+  
+  .glowTitle {
+    font-size: 2rem;
+  }
+  
+  .contactForm {
+    padding: 2rem 1.5rem;
+  }
+  
+  .formRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactSection {
+    padding: 4rem 1rem;
+  }
+  
+  .glowTitle {
+    font-size: 1.8rem;
+  }
+  
+  .contactForm {
+    padding: 1.5rem 1rem;
+  }
+  
+  .inputField, .submitBtn {
+    font-size: 0.95rem;
+  }
+}

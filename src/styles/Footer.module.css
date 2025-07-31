@@ -1,0 +1,217 @@
+.footer {
+  background: transparent;
+  padding: 3rem 0 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Digital grid effect */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(0deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
+  z-index: -1;
+}
+
+.neonLine {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, 
+    transparent 5%,
+    #00ffff, #ff00f7, #39ff14, 
+    #00ffff, #ff00f7, #39ff14,
+    transparent 95%
+  );
+  background-size: 200% 100%;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.7), 0 0 40px rgba(57, 255, 20, 0.3);
+  margin-bottom: 2.5rem;
+  position: relative;
+  animation: neonFlow 8s linear infinite;
+}
+
+@keyframes neonFlow {
+  0% { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.socials {
+  display: flex;
+  gap: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.socialLink {
+  color: #00ffff;
+  font-size: 1.8rem;
+  background: rgba(10, 10, 35, 0.6);
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.socialLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 255, 0.15);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.socialLink:hover::before {
+  transform: translateY(0);
+}
+
+.socialLink:hover {
+  color: #fff;
+  transform: translateY(-5px) rotate(360deg) scale(1.1);
+  border-color: #ff00f7;
+  box-shadow: 0 0 20px rgba(255, 0, 247, 0.5), 0 0 40px rgba(0, 255, 255, 0.3);
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.copyright::before, .copyright::after {
+  content: '//';
+  position: absolute;
+  color: rgba(0, 255, 255, 0.6);
+  font-family: monospace;
+}
+
+.copyright::before {
+  left: -2rem;
+}
+
+.copyright::after {
+  right: -2rem;
+}
+
+.scrollTopBtn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(0, 255, 255, 0.8);
+  color: #0a0a23;
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5), 0 0 40px rgba(57, 255, 20, 0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.scrollTopBtn:hover {
+  background: rgba(255, 0, 247, 0.8);
+  color: #fff;
+  transform: translateY(-8px);
+  box-shadow: 0 0 30px rgba(255, 0, 247, 0.7), 0 0 50px rgba(0, 255, 255, 0.4);
+}
+
+.scrollIcon {
+  font-size: 1.6rem;
+  transition: transform 0.3s;
+}
+
+.scrollTopBtn:hover .scrollIcon {
+  transform: translateY(-5px);
+}
+
+.footerContent {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .socials {
+    gap: 1.5rem;
+  }
+  
+  .socialLink {
+    font-size: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+  }
+  
+  .copyright::before, .copyright::after {
+    display: none;
+  }
+  
+  .scrollTopBtn {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1.5rem 0;
+  }
+  
+  .neonLine {
+    margin-bottom: 1.5rem;
+  }
+  
+  .socials {
+    gap: 1rem;
+  }
+  
+  .socialLink {
+    font-size: 1.3rem;
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+  
+  .scrollTopBtn {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.7rem;
+    height: 2.7rem;
+  }
+}

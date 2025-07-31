@@ -1,0 +1,34 @@
+[
+  {
+    "type": "internship",
+    "title": "Software Engineering Intern",
+    "company": "Tiers Ltd",
+    "date": "June 2025 – Present",
+    "icon": "/assets/tiers-logo.svg",
+    "details": [
+      "Learning and working with the MERN stack: MongoDB, Express.js, React.js, Node.js",
+      "Developed responsive UI components using React.js",
+      "Integrated Firebase services like Firestore and Authentication",
+      "Built and tested CRUD operations in real-time apps",
+      "Collaborated with senior developers in an Agile team",
+      "Used Git & GitHub for version control and team collaboration",
+      "Improved UI/UX with custom CSS and clean design practices"
+    ]
+  },
+  {
+    "type": "award",
+    "title": "Dean’s Honor List – Fall 2023",
+    "company": "University of Lahore",
+    "date": "Fall 2023",
+    "icon": "/assets/deans-honor.svg",
+    "details": ["Awarded for academic excellence at the University of Lahore."]
+  },
+  {
+    "type": "award",
+    "title": "Bug Finder Winner – Beam 9.0",
+    "company": "Beam 9.0",
+    "date": "2023",
+    "icon": "/assets/beam-bug.svg",
+    "details": ["Winner of a debugging competition for exceptional performance in problem-solving."]
+  }
+]

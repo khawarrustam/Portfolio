@@ -1,0 +1,101 @@
+
+:root {
+  /* Color Variables */
+  --neon-green: #39ff14;
+  --neon-blue: #00ffff;
+  --neon-pink: #ff007f;
+  --neon-purple: #b026ff;
+  --bg-dark: #0d0d0d;
+  --text-light: #eaeaea;
+  
+  /* Component Variables */
+  --navbar-height: 4.5rem;
+  --section-padding: 5rem 1.5rem;
+  --border-radius: 12px;
+  --transition-slow: all 0.5s ease;
+  --transition-medium: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
+  
+  /* Animation Variables */
+  --glow-strength: 0 0 10px;
+  --glow-strength-medium: 0 0 20px;
+  --glow-strength-high: 0 0 30px;
+}
+
+html, body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-dark) 0%, #18171d 60%, #1a0033 100%);
+  background-attachment: fixed;
+  animation: bgMove 20s ease-in-out infinite alternate;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: var(--text-light);
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Glassmorphism effect for cards and modals */
+.glass {
+  background: rgba(10, 10, 35, 0.7);
+  box-shadow: 0 8px 32px 0 #00ffff33, 0 0 64px #39ff1444;
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1.5px solid #00ffff44;
+}
+
+/* More intense neon glow for headings */
+h1, h2, h3, .glowTitle {
+  color: #00ffff;
+  text-shadow: 0 0 16px #00ffff, 0 0 32px #39ff14, 0 0 48px #ff4dff;
+}
+
+/* Subtle animated border for main sections */
+section {
+  border: 2px solid #00ffff44;
+  box-shadow: 0 0 32px #00ffff22, 0 0 64px #39ff1422;
+  border-radius: 18px;
+  animation: borderPulse 3s infinite alternate;
+}
+
+@keyframes borderPulse {
+  0% { border-color: #00ffff44; }
+  100% { border-color: #ff4dff44; }
+}
+/* Custom neon cursor */
+body {
+  background: #0a0a23;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  cursor: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #18171d;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffff;
+  border-radius: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Neon selection */
+::selection {
+  background: #00ffff44;
+  color: #0a0a23;
+}
+
+/* Custom cursor base (hidden, JS will add .neon-cursor) */

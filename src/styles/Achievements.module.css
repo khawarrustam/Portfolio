@@ -1,0 +1,326 @@
+.achievementsSection {
+  min-height: 60vh;
+  background: transparent;
+  padding: 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Create a futuristic tech pattern background */
+.achievementsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(255, 0, 247, 0.05) 0%, transparent 60%),
+    radial-gradient(circle at 80% 30%, rgba(0, 255, 255, 0.05) 0%, transparent 60%);
+  background-size: 100% 100%;
+  z-index: -1;
+}
+
+/* Add animated neon beam */
+.achievementsSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 255, 255, 0.8), 
+    rgba(255, 0, 247, 0.8), 
+    rgba(57, 255, 20, 0.8), 
+    transparent);
+  z-index: 0;
+  opacity: 0.5;
+  animation: neonBeam 15s linear infinite;
+  transform: rotate(-15deg);
+}
+
+@keyframes neonBeam {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.glowTitle {
+  font-size: 2.5rem;
+  font-family: 'Orbitron', system-ui, sans-serif;
+  color: #00ffff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 30px rgba(57, 255, 20, 0.5);
+  font-weight: bold;
+  margin-bottom: 3rem;
+  letter-spacing: 3px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.glowTitle::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00ffff, rgba(255, 0, 247, 0.7));
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+  animation: pulseWidth 4s ease-in-out infinite;
+}
+
+@keyframes pulseWidth {
+  0%, 100% { width: 80px; }
+  50% { width: 120px; }
+}
+
+.statsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1100px;
+  margin-bottom: 3rem;
+}
+
+.statCard {
+  background: rgba(10, 10, 35, 0.75);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.2), 0 0 60px rgba(57, 255, 20, 0.1);
+  padding: 2rem;
+  min-width: 200px;
+  flex: 1;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.4s;
+  position: relative;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: -200%;
+  left: -50%;
+  width: 200%;
+  height: 500%;
+  background: linear-gradient(
+    transparent, 
+    rgba(0, 255, 255, 0.1), 
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: all 0.8s;
+}
+
+.statCard:hover::before {
+  top: 200%;
+  transition: all 0.8s;
+}
+
+.statCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.4), 0 0 80px rgba(255, 0, 247, 0.2);
+}
+
+.statIcon {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  /* Icon color is set in the component */
+  filter: drop-shadow(0 0 10px rgba(0, 255, 255, 0.7));
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #00ffff;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+}
+
+.statLabel {
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.badgeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.badge {
+  padding: 0.7rem 1.5rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+  border: 2px solid transparent;
+}
+
+.badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6), 0 0 40px rgba(255, 0, 247, 0.3);
+}
+
+.badge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotate(30deg);
+  transition: all 0.7s;
+}
+
+.badge:hover::after {
+  left: 120%;
+  transition: all 0.7s;
+}
+
+.cyanBadge {
+  background: rgba(0, 255, 255, 0.8);
+  color: #0a0a23;
+  border-color: rgba(0, 255, 255, 0.3);
+}
+
+.pinkBadge {
+  background: rgba(255, 0, 247, 0.8);
+  color: #0a0a23;
+  border-color: rgba(255, 0, 247, 0.3);
+}
+
+.limeBadge {
+  background: rgba(57, 255, 20, 0.8);
+  color: #0a0a23;
+  border-color: rgba(57, 255, 20, 0.3);
+}
+
+.iconRow {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.decorIcon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+  transition: all 0.3s;
+}
+
+.decorIcon:hover {
+  transform: scale(1.2) rotate(10deg);
+}
+
+.cyanIcon {
+  color: #00ffff;
+  animation: pulse 2s infinite alternate;
+}
+
+.pinkIcon {
+  color: #ff00f7;
+  animation: pulse 2.5s infinite alternate 0.5s;
+}
+
+.limeIcon {
+  color: #39ff14;
+  animation: pulse 3s infinite alternate 1s;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.7; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .achievementsSection {
+    padding: 5rem 1.5rem;
+  }
+  
+  .glowTitle {
+    font-size: 2rem;
+  }
+  
+  .statsGrid {
+    gap: 1.5rem;
+  }
+  
+  .statCard {
+    min-width: 160px;
+    padding: 1.5rem;
+  }
+  
+  .statIcon {
+    font-size: 2.2rem;
+  }
+  
+  .statValue {
+    font-size: 2rem;
+  }
+  
+  .badge {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievementsSection {
+    padding: 4rem 1rem;
+  }
+  
+  .glowTitle {
+    font-size: 1.8rem;
+  }
+  
+  .statsGrid {
+    gap: 1rem;
+  }
+  
+  .statCard {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .iconRow {
+    gap: 1.5rem;
+  }
+  
+  .decorIcon {
+    font-size: 1.8rem;
+  }
+}
